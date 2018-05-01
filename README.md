@@ -1,4 +1,6 @@
-#MAGIC CRUD
+#MAGIC CRUD VERSION 1.0
+
+![enter image description here](https://i.pinimg.com/originals/9e/70/23/9e702332666f07618880611dd502fc9e.png)
 
 **HOW TO USE**
 
