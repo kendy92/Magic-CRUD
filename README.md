@@ -4,7 +4,7 @@
 
 **HOW TO USE**
 
-- Require the magic crud  in the file you want to use by adding the following line of code:
+- Include the magic crud  in the file you want to use by adding the following line of code:
 
 
 
@@ -15,24 +15,24 @@ Config your database information in magic_crud.php file.
 
 **INSERT ROW**
 
-- Create an object that holds up column name and value which require to add to the database. Result will return number of rows that successfully add to database. 0 if no row added!
+- Create an array that holds up column name and value which require to add to the database. Result will return number of rows that successfully add to database. 0 if no row added!
 
 > \$new_item = array('col_name_1' => 'value_1', 	   col_name_2' =>
 > 'value_2');
 
-- Call the function and pass the object and table name to it.
+- Call the function and pass the array and table name to it. Column name needs to be match with the one in the database.
 
 > MAGIC_CRUD::insert(\$new_item, "your_table_name");
 
 
 **UPDATE EXISTING ROW**
 
-- Create an object that holds up column name and value that require to update to the database. Result will return number of rows that successfully add to database. 0 if no row added!
+- Create an array that holds up column name and value that require to update to the database. Result will return number of rows that successfully add to database. 0 if no row added!
 
 > \$new_item = array('col_name_1' => 'value_1', col_name_2' =>
 > 'value_2');
 
-- Call the function and pass the object, table name, condition column and condition value to it.
+- Call the function and pass the array, table name, condition column and condition value to it(condition WHERE colum = value)
 
 > MAGIC_CRUD::update($obj, $table_name, $condition_col, $condition_val);
 
@@ -52,7 +52,7 @@ Config your database information in magic_crud.php file.
 
 - Call the function and pass the table name to show all data regarding to that table. Result will be sorted in descending order by default but you can pass second parameter as "ASC" to sort it in ascending order and return as an object. Use foreach loop to loop through the result.
 
-> MAGIC_CRUD::show(\$table_name,$order = "DESC");
+> MAGIC_CRUD::show(\$table_name,$order); //by default $order = "DESC" if no value pass in
 
 **CUSTOM SHOW**
 
