@@ -46,19 +46,31 @@ Config your database information in magic_crud.php file.
 
 - Call the function and pass the id of existing row and table name to show data regarding to that id from database. Result will return as an object and use foreach loop to loop through the result.
 
-> MAGIC_CRUD::details($id, $table_name)
+> \$result = MAGIC_CRUD::details($id, $table_name)
+
+> foreach($result as $item) { 	
+> echo $item->column_name; 
+> }
 
 **SHOW DATA**
 
 - Call the function and pass the table name to show all data regarding to that table. Result will be sorted in descending order by default but you can pass second parameter as "ASC" to sort it in ascending order and return as an object. Use foreach loop to loop through the result.
 
-> MAGIC_CRUD::show(\$table_name,$order); //by default $order = "DESC" if no value pass in
+> $result = MAGIC_CRUD::show(\$table_name,$order); //by default $order = "DESC" if no value pass in
+> 
+> foreach($result as $item) { 	
+> echo $item->column_name; 
+> }
 
 **CUSTOM SHOW**
 
 - Call the function and pass the custom query. Result will return as an object and use foreach loop to loop through the result. It is ideally to use for multiple join table statement.
 
-> MAGIC_CRUD::custom_show($query);
+> \$result = MAGIC_CRUD::custom_show($query);
+> 
+> foreach($result as $item) { 	
+> echo $item->column_name; 
+> }
 
 
 **CODED BY LILCASOFT.INFO**
