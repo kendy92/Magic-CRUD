@@ -3,13 +3,8 @@
 ![enter image description here](https://i.pinimg.com/originals/9e/70/23/9e702332666f07618880611dd502fc9e.png)
 
 **HOW TO USE**
-<<<<<<< HEAD
 - Require php version 5.6 or higher. PHP 7 is recommended!
 - Require the magic crud  in the file you want to use by adding the following line of code:
-=======
-
-- Include the magic crud  in the file you want to use by adding the following line of code:
->>>>>>> 53305badbd9254d164eeb703a692b523f13c8311
 
 >  require_once "magic_crud.php";
 
@@ -52,7 +47,7 @@ Config your database information in magic_crud.php file.
 > \$result = MAGIC_CRUD::details($id, $table_name)
 
 > foreach($result as $item) { 	
-> echo $item->column_name; 
+> echo $item->column_name;
 > }
 
 **SHOW DATA**
@@ -60,9 +55,9 @@ Config your database information in magic_crud.php file.
 - Call the function and pass the table name to show all data regarding to that table. Result will be sorted in descending order by default but you can pass second parameter as "ASC" to sort it in ascending order and return as an object. Use foreach loop to loop through the result.
 
 > $result = MAGIC_CRUD::show(\$table_name,$order); //by default $order = "DESC" if no value pass in
-> 
+>
 > foreach($result as $item) { 	
-> echo $item->column_name; 
+> echo $item->column_name;
 > }
 
 **SEARCH DATA**
@@ -76,9 +71,9 @@ Config your database information in magic_crud.php file.
 - Call the function and pass the custom query. Result will return as an object and use foreach loop to loop through the result. It is ideally to use for multiple join table statement.
 
 > \$result = MAGIC_CRUD::custom_show($query);
-> 
+>
 > foreach($result as $item) { 	
-> echo $item->column_name; 
+> echo $item->column_name;
 > }
 
 
