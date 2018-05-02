@@ -3,10 +3,8 @@
 ![enter image description here](https://i.pinimg.com/originals/9e/70/23/9e702332666f07618880611dd502fc9e.png)
 
 **HOW TO USE**
-
+- Require php version 5.6 or higher. PHP 7 is recommended!
 - Require the magic crud  in the file you want to use by adding the following line of code:
-
-
 
 >  require_once "magic_crud.php";
 
@@ -53,6 +51,12 @@ Config your database information in magic_crud.php file.
 - Call the function and pass the table name to show all data regarding to that table. Result will be sorted in descending order by default but you can pass second parameter as "ASC" to sort it in ascending order and return as an object. Use foreach loop to loop through the result.
 
 > MAGIC_CRUD::show(\$table_name,$order = "DESC");
+
+**SEARCH DATA**
+
+- Call the function and pass the table name, condition column and condition value that you want to search. Result will return as an object and use foreach loop to loop through the result.
+
+> MAGIC_CRUD::search(\$table_name, $condition_col, $condition_value);
 
 **CUSTOM SHOW**
 

@@ -148,5 +148,20 @@ class MAGIC_CRUD{
     }
   }
 
+  public static function search($table_name, $condition_col, $condition_value) {
+    try {
+      $condition_value = "%".$condition_value."%";
+       $conn = self::connectDB();
+       $conn->query("SET NAMES utf8");
+       $cmd = $conn->prepare("SELECT * FROM {$table_name} WHERE {$condition_col} LIKE :val");
+       $cmd->setFetchMode(PDO::FETCH_OBJ);
+       $cmd->bindParam(':val', $condition_value,PDO::PARAM_STR);
+       $cmd->execute();
+       return $cmd->fetchAll();
+     } catch (PDOException $e) {
+       return $e->getMessage();
+     }
+   }
+
 }
  ?>
