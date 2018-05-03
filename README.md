@@ -15,8 +15,7 @@ Config your database information in magic_crud.php file.
 
 - Create an array that holds up column name and value which require to add to the database. Result will return number of rows that successfully add to database. 0 if no row added!
 
-> \$new_item = array('col_name_1' => 'value_1', 	   col_name_2' =>
-> 'value_2');
+> \$new_item = array('col_name_1' => 'value_1', 	   col_name_2' => 'value_2');
 
 - Call the function and pass the array and table name to it. Column name needs to be match with the one in the database.
 
@@ -27,8 +26,7 @@ Config your database information in magic_crud.php file.
 
 - Create an array that holds up column name and value that require to update to the database. Result will return number of rows that successfully add to database. 0 if no row added!
 
-> \$new_item = array('col_name_1' => 'value_1', col_name_2' =>
-> 'value_2');
+> \$new_item = array('col_name_1' => 'value_1', col_name_2' => 'value_2');
 
 - Call the function and pass the array, table name, condition column and condition value to it(condition WHERE colum = value)
 
