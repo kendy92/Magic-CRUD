@@ -42,7 +42,7 @@ class MAGIC_CRUD{
     try {
       $conn = self::connectDB();
       $conn->query("SET NAMES utf8");
-      $cmd = $conn->prepare("SELECT * FROM {$table_name} ORDER BY id {$order}");
+      $cmd = $conn->prepare("SELECT * FROM `{$table_name}` ORDER BY id {$order}");
       $cmd->setFetchMode(PDO::FETCH_OBJ); //return result as an object
       $cmd->execute();
       return $cmd->fetchAll();
@@ -59,7 +59,7 @@ class MAGIC_CRUD{
     try {
       $conn = self::connectDB();
 
-      $query .= "INSERT INTO ".$table_name;
+      $query .= "INSERT INTO `".$table_name."`";
       foreach($obj as $key => $val) {
         if($count == count($obj)){ //remove hyphon at last item of array
           self::$cols .= $key;
@@ -96,7 +96,7 @@ class MAGIC_CRUD{
     try {
       $conn = self::connectDB();
 
-      $query .= "UPDATE ".$table_name." SET ";
+      $query .= "UPDATE `".$table_name."` SET ";
       foreach($obj as $key => $val) {
         if($count == count($obj)){ //remove hyphon at last item of array
           self::$cols .= $key."= :{$key}";
@@ -126,7 +126,7 @@ class MAGIC_CRUD{
   public static function delete($id, $table_name){
     try {
       $conn = self::connectDB();
-      $cmd = $conn->prepare("DELETE FROM {$table_name} WHERE id = :i");
+      $cmd = $conn->prepare("DELETE FROM `{$table_name}` WHERE id = :i");
       $cmd->bindParam(':i',$id);
       return $cmd->execute();
     } catch (PDOException $e) {
@@ -138,7 +138,7 @@ class MAGIC_CRUD{
     try {
       $conn = self::connectDB();
       $conn->query("SET NAMES utf8");
-      $cmd = $conn->prepare("SELECT * FROM {$table_name} WHERE id = :i");
+      $cmd = $conn->prepare("SELECT * FROM `{$table_name}` WHERE id = :i");
       $cmd->setFetchMode(PDO::FETCH_OBJ); //return result as an object
       $cmd->bindParam(':i',$id);
       $cmd->execute();
@@ -153,7 +153,7 @@ class MAGIC_CRUD{
       $condition_value = "%".$condition_value."%";
        $conn = self::connectDB();
        $conn->query("SET NAMES utf8");
-       $cmd = $conn->prepare("SELECT * FROM {$table_name} WHERE {$condition_col} LIKE :val");
+       $cmd = $conn->prepare("SELECT * FROM `{$table_name}` WHERE {$condition_col} LIKE :val");
        $cmd->setFetchMode(PDO::FETCH_OBJ);
        $cmd->bindParam(':val', $condition_value,PDO::PARAM_STR);
        $cmd->execute();
